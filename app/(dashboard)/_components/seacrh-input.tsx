@@ -25,9 +25,9 @@ export const SearchInput = () => {
         const url = qs.stringifyUrl({
             url: "/",
             query: {
-                search: debouncedValue?.toString() || ""
+                search: debouncedValue[0].toString() || ""
             }
-        }, { skipEmptyString: true, skipNull: true })
+        }, { skipEmptyString: true, skipNull: true });
 
         router.push(url);
     }, [debouncedValue, router]);
